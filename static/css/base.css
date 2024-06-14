@@ -1,0 +1,47 @@
+.back-color {
+    background-color: #4062AD;
+}
+
+.nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: var(--bs-nav-link-font-size);
+    font-weight: var(--bs-nav-link-font-weight);
+    color: silver !important;
+    text-decoration: none;
+    background: 0 0;
+    border: 0;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+}
+
+.a-color {
+    color: white !important;
+    text-decoration: none;
+}
+
+.p-color {
+    color: #FF7733;
+}
+
+.text-silver {
+    color: silver !important;
+}
+
+.body {
+    overflow-x: hidden;
+    overflow-x: clip !important;
+    text-align: center;
+}
+
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: white;
+}
+
+.justify-custom {
+    text-align: justify !important;
+}

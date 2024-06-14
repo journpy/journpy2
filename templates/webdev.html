@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %}Web Development{% endblock title %}
+
+{% block content %}
+<h1 class="text-primary">Web Development with Python and Django</h1>
+<p class="p-color">This course provides a structured project based approach to learning Django,
+    covering essential concepts and gradually progressing to more advanced topics. It is suitable for aspiring or
+    beginners as well as intermediate
+    web developers.</p>
+
+<ul class="justify-custom">
+    <p class="lead fw-bold">Module 1: Introduction to Django</p>
+    <ol type="i">
+        <li>Overview of Django framework</li>
+        <li>Installation and setup</li>
+        <li>MVT architecture</li>
+        <li>Creating a Django project and app</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 2: Django Models</p>
+    <ol type="i">
+        <li>Introduction to Django models</li>
+        <li>Defining models</li>
+        <li>Database migrations</li>
+        <li>Django Admin interface</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 3: Views and Templates</p>
+    <ol type="i">
+        <li>Understanding views and URLs</li>
+        <li>Creating views</li>
+        <li>Using Django templates</li>
+        <li>Template inheritance and filters</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 4: Forms and Validation</p>
+    <ol type="i">
+        <li>Introduction to Django forms</li>
+        <li>Building forms with Django</li>
+        <li>Form validation</li>
+        <li>Form handling and processing</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 5: Django ORM</p>
+    <ol type="i">
+        <li>Basics of Django ORM (Object-Relational Mapping)</li>
+        <li>Querysets</li>
+        <li>Aggregation and filtering</li>
+        <li>Advanced ORM concepts</li>
+    </ol>
+    <br>
+
+    <p class="lead fw-bold">Module 6: Authentication and Authorization</p>
+    <ol type="i">
+        <li>User authentication in Django</li>
+        <li>User registration and login</li>
+        <li>Permissions and authorization</li>
+        <li>Implementing user roles</li>
+    </ol>
+    <br>
+
+    <p class="lead fw-bold">Module 7: Deployment</p>
+    <ol type="i">
+        <li>Preparing Django apps for deployment</li>
+        <li>Hosting on Heroku</li>
+        <li>Setting up a production server</li>
+        <li>Deploying a Django project</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 8: Mini Project</p>
+    <ol type="i">
+        <li>Build a Newspaper application from scratch using Django</li>
+        <li>Incorporating various features learned in this course</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Module 9: Final Project</p>
+    <ol type="i">
+        <li>Build a professional looking blog app Incorporating all the features learned in this course.</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Additional Resources</p>
+    <ol type="i">
+        <li>Recommended readings, documentation links, and tutorials for further exploration</li>
+        <li>Online communities and forums for Django developers</li>
+    </ol>
+    <br>
+    <p class="lead fw-bold">Get your certificate of completion!</p>
+</ul>
+{% if user.is_authenticated %}
+<div class="container">
+    <a href="{% url 'home' %}">Home</a>
+</div>
+{% else %}
+<div class="container">
+    <a href="{% url 'signup' %}">Sign up for our web development course &raquo;</a>
+</div>
+{% endif %}
+{% endblock content %}

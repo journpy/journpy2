@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<h2 class="display-5 fw-bold text-primary">Start your day with Python</h2>
+<div class="hstack gap-3">
+    <img src="{% static 'images\code-geek-2680204_1280.png' %}" class="rounded mx-auto d-block justify-custom"
+        alt="image" width="25%" height="auto">
+    <p class="lead fw-bold p-color p-2">Learn Python for:</p>
+    <a class="btn btn-primary" href="{% url 'webdev' %}" role="button">Web Development</a>
+    <button type="button" class="btn btn-primary p-2">Mathematics</button>
+    <button type="button" class="btn btn-primary p-2">Game Development</button>
+</div>
+</div>
+
+<div class="p-5 mb-4 bg-body-tertiary rounded-3">
+    <div class="container-fluid py-0">
+        <p class="fs-4">Our mission is to help fast track your tech journey with Python.</p>
+        <p class="p-color">We offer various programs for learners of various ages from elementary pupils
+            to adults.</p>
+
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                        aria-controls="panelsStayOpen-collapseOne">
+                        Python For Web
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                        <strong>This program is geared towards training fullstack developers with Python.</strong> In
+                        this program, you will learn backend development with Python using Django
+                        framework. You will learn to style your web app using Bootstrap. It also
+                        includes a crash course on Python for those that need it to get you familiar with Python as a
+                        prerequisite for learning Django. This program comes with assignments and quizzes with a final
+                        project to build and host your blog app. At the end of the program, you will be awarded a
+                        certificate of completion. The duration of this program is 3 months.
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseTwo">
+                        Python for Mathematics
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>The purpose of this program is to help learners learn math through coding in an
+                            integrated learning approach that is based on Seymour Papert's theory of
+                            Constructionism.</strong> This program is divided into two categories:
+                        <ol type="i">
+                            <li>Python for Elementary Math</li>
+                            <li>Python for Secondary Math</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                        aria-controls="panelsStayOpen-collapseThree">
+                        Python for Games
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                        <strong>Learn Game development with Python and Pygame.</strong>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h1 class="display-4 text-primary">Sneak Peek</h1>
+        <img src="{% static 'images\Screenshot 2024-06-05 012448.png' %}" class="img-fluid" alt="Pizza-Circle">
+        <p class="lead p-color">Elementary pupils learn fractions by slicing a pizza (circle) into eight equal parts
+            using
+            python codes.</p>
+        <img src="{% static 'images\Screenshot 2024-06-05 014738.png' %}" class="img-fluid" alt="Pizza-Circle-Codes">
+        <p>This integrated approach to learning math and coding makes JournPy stand out.</p>
+    </div>
+    <div class="container">
+        <h1 class="display-4 text-primary">Stories</h1>
+        <p>Thanks to JournPy, I am now able to read and write python codes. - Jane O.</p>
+    </div>
+</div>
+
+{% endblock content %}
