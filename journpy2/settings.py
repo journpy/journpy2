@@ -161,6 +161,3 @@ if os.environ.get('DEBUG') == 'TRUE':
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
 
-# get the relevant errors to propagate up through the Heroku logs.
-DEBUG_PROPAGATE_EXCEPTIONS = True
-
