@@ -5,17 +5,17 @@
 <div class="card mb-3">
     <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image.imgname }}">
     <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <!--<h5 class="card-title">{{ post.title }}</h5>-->
         <p class="card-text">{{ post.body }}</p>
-        <p class="card-text"><small class="text-body-secondary">1</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{ post.date_added }}</small></p>
     </div>
 </div>
 <div class="card">
     <img src="{{ post.image2.url }}" class="card-img-top" alt="{{ post.image2.imgname }}">
     <div class="card-body">
-        <h5 class="card-title">{{ post.title }} continues...</h5>
+        <!--<h5 class="card-title">{{ post.title }} continues...</h5>-->
         <p class="card-text">{{ post.body2 }}</p>
-        <p class="card-text"><small class="text-body-secondary">2</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{ post.date_added }}</small></p>
     </div>
 </div>
 {% endblock content %}

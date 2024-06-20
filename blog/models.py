@@ -4,6 +4,7 @@ class Post(models.Model):
     """Model a blog post."""
     title = models.CharField(max_length=200)
     author = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE,)
+    date_added = models.DateTimeField(auto_now=True)
     body = models.TextField()
     body2 = models.TextField()
     imgname = models.CharField(max_length=250, blank=True)

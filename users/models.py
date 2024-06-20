@@ -12,6 +12,7 @@ COURSE_CHOICES = {
 
 
 class CustomUser(AbstractUser):
+    date_added = models.DateTimeField(auto_now_add=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     phone_number = PhoneNumberField(blank=True)
     country = CountryField(blank_label="Select Country")

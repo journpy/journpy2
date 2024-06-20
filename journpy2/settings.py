@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     # My apps
     "blog.apps.BlogConfig",
     "mainapp.apps.MainappConfig",
-    'users.apps.UsersConfig',
+    "users.apps.UsersConfig",
+    "contact.apps.ContactConfig",
 
     # Third party apps
     "django_bootstrap5",
@@ -152,6 +153,14 @@ AUTH_USER_MODEL = config('AUTH_USER_MODEL')
 LOGIN_REDIRECT_URL = config('LOGIN_REDIRECT_URL')
 LOGOUT_REDIRECT_URL = config('LOGOUT_REDIRECT_URL')
 
+# SMTP server configuration and your credentials
+EMAIL_BACKEND = config('EMAIL_BACKEND')
+EMAIL_HOST = config('EMAIL_HOST')
+EMAIL_PORT = config('EMAIL_PORT', cast=int)
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+
 # Heroku settings
 import django_heroku
 django_heroku.settings(locals())
@@ -160,4 +169,5 @@ if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
+
 

@@ -12,7 +12,7 @@ class ImageAdmin(admin.ModelAdmin):
     def image_tag2(self, obj):
         return format_html('<img src="{}" style="max-width:200px; max-height:200px"/>'.format(obj.image2.url))
 
-    list_display = ['title', 'author', 'body', 'body2', 'imgname', 
+    list_display = ['title', 'author', 'date_added', 'body', 'body2', 'imgname', 
                     'imgname2', 'image_tag', 'image_tag2',]
 
 admin.site.register(Post, ImageAdmin)
