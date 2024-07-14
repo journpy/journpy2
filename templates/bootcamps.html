@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Bootcamps{% endblock title %}
+
+{% block content %}
+<div class="container mb-2 justify-custom">
+    <img src="{% static 'images/Summer class Journ py.jpg' %}" class="img-fluid" alt="Kiddies Bootcamp">
+    <p class="lead p-color fw-bold fst-italic">For children aged 6+.</p>
+</div>
+<div class="container mt-2 justify-custom">
+    <img src="{% static 'images/journpy.jpg' %}" class="img-fluid" alt="Python Bootcamp">
+    <p class="lead p-color fw-bold fst-italic">For teens and adults of all ages.</p>
+</div>
+{% endblock content %}

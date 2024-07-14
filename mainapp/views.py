@@ -13,3 +13,7 @@ class AboutPageView(TemplateView):
 class WebDevView(TemplateView):
     template_name = "webdev.html"
 
+
+class BootCampView(TemplateView):
+    template_name = 'bootcamps.html'
+
