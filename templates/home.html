@@ -4,21 +4,20 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-<br>
-<h2 class="display-5 fw-bold text-primary">Start your day with Python</h2>
+<h2 class="display-5 fw-bold text-primary">Python is Easy</h2>
 <div class="vstack gap-2 col-md-5 mx-auto">
-    <img src="{% static 'images/code-geek-2680204_1280.png' %}" class="rounded mx-auto d-block justify-custom"
-        alt="image" width="25%" height="auto">
-    <p class="lead fw-bold p-color p-2">Learn Python for:</p>
-    <a class="btn btn-primary" href="{% url 'webdev' %}" role="button">Web Development</a>
-    <button type="button" class="btn btn-primary p-2">Mathematics</button>
-    <a class="btn btn-primary" href="{% url 'bootcamps' %}" role="button">Bootcamps</a>
+    <!--<img src="{% static 'images/code-geek-2680204_1280.png' %}" class="rounded mx-auto d-block justify-custom"
+        alt="image" width="25%" height="auto">-->
+    <a class="btn btn-outline-primary" href="{% url 'webdev' %}" role="button">Web Development</a>
+    <a class="btn btn-outline-success" href="{% url 'bootcamps' %}" role="button">Bootcamps</a>
+    <!-- <button type="button" class="btn btn-outline-warning p-2" disabled>Mathematics</button>-->
 </div>
 <br>
+
 <div id="carouselExampleRide" class="carousel slide" data-bs-ride="true">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="{% static 'images/Summer class Journ py.jpg' %}" class="d-block w-100" alt="Kiddies Bootcamp">
+            <img src="{% static 'images/Journ Py Summer.jpg' %}" class="d-block w-100" alt="Kiddies Bootcamp">
         </div>
         <div class="carousel-item">
             <img src="{% static 'images/Journ Py- for web.jpg' %}" class="d-block w-100" alt="Web Development">
@@ -27,17 +26,16 @@
             <img src="{% static 'images/Artboard 1 copy 6@300x-100.jpg' %}" class="d-block w-100" alt="...">
         </div>
     </div>
-    <button class="carousel-control-prev btn btn-light" type="button" data-bs-target="#carouselExampleRide"
-        data-bs-slide="prev">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next btn btn-light" type="button" data-bs-target="#carouselExampleRide"
-        data-bs-slide="next">
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
 </div>
+
 
 <div class="p-5 mb-4 bg-body-tertiary rounded-3">
     <div class="container-fluid py-0">

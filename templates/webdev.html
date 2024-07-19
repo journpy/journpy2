@@ -87,10 +87,14 @@
     <br>
     <p class="lead fw-bold">Get your certificate of completion!</p>
 </ul>
-{% if user.is_authenticated %}
+{% if user.is_authenticated and user.course == 'WEB' %}
 <div class="container">
     <a href="{% url 'home' %}">Home</a>
 </div>
+{% elif user.is_authenticated and user.course != 'WEB' %}
+<p class="p-color text-justify">You already signed up for another course. If you're interested in learning web
+    development,
+    kindly leave us a message using this <a href="{% url 'contact' %}">contact form.</a></p>
 {% else %}
 <div class="container">
     <a href="{% url 'signup' %}">Sign up for our web development course &raquo;</a>

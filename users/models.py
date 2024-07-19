@@ -6,6 +6,7 @@ from django_countries.fields import CountryField
 
 COURSE_CHOICES = {
     'WEB' : 'Web development with Python',
+    'BOOT' : 'Python Bootcamp',
     'MATH' : 'Python for Mathematics',
     'GAME' : 'Game development with Python',
 }

@@ -1,3 +1,4 @@
+{% load static %}
 <div class="container">
     <footer class="py-5">
         <div class="row">
@@ -42,15 +43,17 @@
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
             <p>© 2024 JournPy Tech World. All rights reserved.</p>
             <ul class="list-unstyled d-flex">
-                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#twitter"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#instagram"></use>
-                        </svg></a></li>
-                <li class="ms-3"><a class="link-dark" href="#"><svg class="bi" width="24" height="24">
-                            <use xlink:href="#facebook"></use>
-                        </svg></a></li>
+                <li class="ms-3"><a href="https://wa.me/+2348136689405" target="_blank">
+                        <img src="{% static 'images/whatsapp-873316_1280.png' %}" alt="WhatsApp" class="img-fluid"
+                            style="width: 24px; height: 24px; 
+          object-fit: scale-down;"></a></li>
+                <li class="ms-3"> <a href="mailto:journpy@gmail.com" target="_blank">
+                        <img src="{% static 'images/email-297633_1280.png' %}" alt="Email" class="img-fluid" style="width: 24px; height: 24px; 
+          object-fit: scale-down;"></a></li>
+                <li class="ms-3"> <a href="https://www.instagram.com/journpy/?hl=en" target="_blank">
+                        <img src="{% static 'images/instagram-1785355_1280.png' %}" alt="Instagram" class="img-fluid"
+                            style="width: 24px; height: 24px; 
+          object-fit: scale-down;"></a></li>
             </ul>
         </div>
     </footer>
