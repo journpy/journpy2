@@ -14,3 +14,6 @@ urlpatterns = [
      
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
+# Django Admin Setting
+admin.site.site_header = 'JournPy Administration'
+admin.site.index_title = 'Admin Dashboard'

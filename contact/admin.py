@@ -1,10 +1,16 @@
 from django.contrib import admin
 from .models import Contact
+from .forms import ContactForm
+
 
 class ContactAdmin(admin.ModelAdmin):
     """Display fields in Django admin."""
-    list_display = ['name', 'email', 'phone', 'subject', 'message',]
-
-
-
+    add_form = ContactForm
+    list_display = [
+        'name', 
+        'email', 
+        'phone', 
+        'subject', 
+        'message',        
+        ]
 admin.site.register(Contact, ContactAdmin) 

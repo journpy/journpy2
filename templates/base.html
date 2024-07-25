@@ -50,7 +50,9 @@
                         course &raquo;</a>
                     {% endif %}
 
-                    </ul>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <a class="flex-sm-fill text-sm-center nav-link" href="/admin/">| Admin |</a>
+                    {% endif %}
             </div>
         </div>
     </nav>

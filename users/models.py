@@ -5,6 +5,7 @@ from django_countries.fields import CountryField
 
 
 COURSE_CHOICES = {
+    'SEL' : '--- Select Course ---',
     'WEB' : 'Web development with Python',
     'BOOT' : 'Python Bootcamp',
     'MATH' : 'Python for Mathematics',
@@ -20,5 +21,5 @@ class CustomUser(AbstractUser):
     course = models.CharField(
         max_length=4, 
         choices=COURSE_CHOICES, 
-        default="WEB"
+        default="SEL"
         )
