@@ -14,7 +14,7 @@ COURSE_CHOICES = {
 
 
 class CustomUser(AbstractUser):
-    date_added = models.DateTimeField(auto_now_add=True)
+    email = models.EmailField(unique=True)
     age = models.PositiveIntegerField(null=True, blank=True)
     phone_number = PhoneNumberField(blank=True)
     country = CountryField(blank_label="Select Country")
@@ -23,3 +23,6 @@ class CustomUser(AbstractUser):
         choices=COURSE_CHOICES, 
         default="SEL"
         )
+    # Make email the default for logging in
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']

@@ -16,7 +16,6 @@ class CustomUserAdmin(UserAdmin):
         'last_name', 
         'username', 
         'email', 
-        'date_added', 
         'phone_number', 
         'age', 
         'country', 
@@ -25,6 +24,7 @@ class CustomUserAdmin(UserAdmin):
         'is_superuser', 
         'last_login', 
         'is_active',
+        'date_joined',
         ]
     list_filter = [
         'email', 

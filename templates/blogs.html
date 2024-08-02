@@ -6,7 +6,7 @@
 {% for post in post_list %}
 <div class="post-entry">
     <p>Click on a link to read its article...</p>
-    <h3><a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a></h3>
+    <h3><a href="{% url 'post_detail' post.pk post.slug %}">{{ post.title }}</a></h3>
 </div>
 {% endfor %}
 {% endblock content %}
