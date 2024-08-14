@@ -14,8 +14,8 @@ COURSE_CHOICES = {
 
 
 class CustomUser(AbstractUser):
+    date_of_birth = models.DateField(null=False, blank=False,)
     email = models.EmailField(unique=True)
-    age = models.PositiveIntegerField(null=True, blank=True)
     phone_number = PhoneNumberField(blank=True)
     country = CountryField(blank_label="Select Country")
     course = models.CharField(
@@ -25,4 +25,6 @@ class CustomUser(AbstractUser):
         )
     # Make email the default for logging in
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username']
+    # Ask for these when creating superuser
+    REQUIRED_FIELDS = ['username', 'date_of_birth']
+

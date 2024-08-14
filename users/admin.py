@@ -2,12 +2,19 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from .forms import (
                     CustomUserCreationForm, 
-                    CustomUserChangeForm
+                    CustomUserChangeForm,
 )
 from .models import CustomUser
+from django.db import models
+from journpy2.widgets import PastCustomDatePickerWidget
 
 
+@admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
+    formfield_overrides = {
+        models.DateField:{'widget':PastCustomDatePickerWidget},
+
+    }
     add_form = CustomUserCreationForm
     form = CustomUserChangeForm
     model = CustomUser
@@ -15,9 +22,9 @@ class CustomUserAdmin(UserAdmin):
         'first_name', 
         'last_name', 
         'username', 
+        'date_of_birth',
         'email', 
         'phone_number', 
-        'age', 
         'country', 
         'course', 
         'is_staff', 
@@ -42,9 +49,9 @@ class CustomUserAdmin(UserAdmin):
                     'first_name', 
                     'last_name', 
                     'username', 
+                    'date_of_birth',
                     'email', 
-                    'phone_number', 
-                    'age', 
+                    'phone_number',  
                     'country', 
                     'course',
                     'password1',
@@ -56,6 +63,3 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ["email"]
     ordering = ["email"]
     filter_horizontal = []
-
-
-admin.site.register(CustomUser, CustomUserAdmin)
