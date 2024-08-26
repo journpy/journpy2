@@ -12,7 +12,7 @@ from journpy2.widgets import PastCustomDatePickerWidget
 @admin.register(CustomUser)
 class CustomUserAdmin(UserAdmin):
     formfield_overrides = {
-        models.DateField:{'widget':PastCustomDatePickerWidget},
+        models.DateField:{'widget': PastCustomDatePickerWidget},
 
     }
     add_form = CustomUserCreationForm
@@ -32,6 +32,7 @@ class CustomUserAdmin(UserAdmin):
         'last_login', 
         'is_active',
         'date_joined',
+        'reference_code',
         ]
     list_filter = [
         'email', 

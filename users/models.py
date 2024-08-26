@@ -1,3 +1,4 @@
+import uuid
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
@@ -23,6 +24,11 @@ class CustomUser(AbstractUser):
         choices=COURSE_CHOICES, 
         default="SEL"
         )
+    reference_code = models.UUIDField(
+        default=uuid.uuid4, 
+        unique=True, 
+        editable=False,
+    )
     # Make email the default for logging in
     USERNAME_FIELD = 'email'
     # Ask for these when creating superuser
