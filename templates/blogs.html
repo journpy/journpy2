@@ -8,5 +8,7 @@
     <p>Click on a link to read its article...</p>
     <h3><a href="{% url 'post_detail' post.pk post.slug %}">{{ post.title }}</a></h3>
 </div>
+{% empty %}
+<h3>No blogs added yet.</h3>
 {% endfor %}
 {% endblock content %}
