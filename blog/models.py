@@ -14,6 +14,10 @@ class Post(models.Model):
     image2 = models.ImageField(upload_to='images/', blank=True)
     slug = models.SlugField(max_length=255)
 
+    
+    class Meta:
+        ordering = ('-date_created',)
+
 
     def __str__(self):
         """Return a string representation of the object."""

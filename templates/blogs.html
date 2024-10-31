@@ -3,10 +3,14 @@
 {% block title %}Blogs{% endblock %}
 
 {% block content %}
+<p>Click on a link below to read ...</p>
 {% for post in post_list %}
 <div class="post-entry">
-    <p>Click on a link to read its article...</p>
-    <h3><a href="{% url 'post_detail' post.pk post.slug %}">{{ post.title }}</a></h3>
+    <ul style="list-style-type:circle line-height:180%">
+        <li>
+            <h3><a href="{% url 'post_detail' post.pk post.slug %}">{{ post.title }}</a></h3>
+        </li>
+    </ul>
 </div>
 {% empty %}
 <h3>No blogs added yet.</h3>
