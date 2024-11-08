@@ -32,18 +32,19 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",    # Use WhiteNoise in development
     "django.contrib.staticfiles",  
 
-    # My apps
-    "blog.apps.BlogConfig",
-    "mainapp.apps.MainappConfig",
-    "users.apps.UsersConfig",
-    "contact.apps.ContactConfig",
-
     # Third party apps
     "django_bootstrap5",
     "cloudinary_storage",
     "cloudinary",
     "phonenumber_field",
     "django_countries",
+    "markdownfield",        # render Markdown and store it in the database.
+
+    # My apps
+    "blog.apps.BlogConfig",
+    "mainapp.apps.MainappConfig",
+    "users.apps.UsersConfig",
+    "contact.apps.ContactConfig",
 ]
 
 MIDDLEWARE = [
@@ -169,5 +170,8 @@ if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
+
+# for django-markdownfield 
+SITE_URL = "https://journpy.pythonanywhere.com/"
 
 
