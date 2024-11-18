@@ -30,12 +30,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "whitenoise.runserver_nostatic",    # Use WhiteNoise in development
-    "django.contrib.staticfiles",  
+    "django.contrib.staticfiles",
 
     # Third party apps
     "django_bootstrap5",
-    "cloudinary_storage",
-    "cloudinary",
     "phonenumber_field",
     "django_countries",
     "markdownfield",        # render Markdown and store it in the database.
@@ -139,14 +137,7 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Cloudinary credentials
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': config('JP_CLOUD_NAME'),
-    'API_KEY': config('JP_API_KEY'),
-    'API_SECRET': config('JP_API_SECRET'),
-}
-
-MEDIA_URL = '/media/'  
+MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Custom user settings
@@ -162,16 +153,12 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 
-# Heroku settings
-import django_heroku
-django_heroku.settings(locals())
-
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
 elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
 
-# for django-markdownfield 
+# for django-markdownfield
 SITE_URL = "https://journpy.pythonanywhere.com/"
 
 
