@@ -28,7 +28,6 @@
                 <nav class="nav nav-pills flex-column flex-sm-row">
                     <a class="flex-sm-fill text-sm-center nav-link a-color" aria-current="page"
                         href="{% url 'blogs' %}">Blog</a>
-
                     <a class="flex-sm-fill text-sm-center nav-link a-color" href="{% url 'contact' %}">Contact</a>
                     {% if user.is_authenticated %}
                     <a class="flex-sm-fill text-sm-center nav-link disabled" aria-disabled="true">
@@ -48,6 +47,10 @@
                     <a class="flex-sm-fill text-sm-center nav-link a-color" href="{% url 'login' %}">Log In</a>
                     <a class="flex-sm-fill text-sm-center nav-link active a-color" href="{% url 'signup' %}">Register a
                         course &raquo;</a>
+                    {% endif %}
+                    {% if user.is_authenticated %}
+                    <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'password_change' %}">| Change
+                        Password |</a>
                     {% endif %}
 
                     {% if user.is_authenticated and user.is_staff %}

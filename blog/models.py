@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.conf import settings
 from markdownfield.models import MarkdownField, RenderedMarkdownField
 from markdownfield.validators import VALIDATOR_STANDARD
 
@@ -7,7 +7,7 @@ from markdownfield.validators import VALIDATOR_STANDARD
 class Post(models.Model):
     """Model a blog post."""
     title = models.CharField(max_length=200)
-    author = models.ForeignKey('users.CustomUser', on_delete=models.CASCADE,)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
     date_modified = models.DateTimeField(auto_now=True)
     date_created = models.DateTimeField(auto_now_add=True)
     # Implementing django-markdownfield 

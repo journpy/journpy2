@@ -4,7 +4,7 @@ from django.core.validators import EmailValidator
 class Contact(models.Model):
     """Model a contact form."""
     name = models.CharField(max_length=100)
-    email = models.CharField(max_length=255, validators=[EmailValidator()])
+    email = models.EmailField(max_length=255)
     phone = models.CharField(max_length=15)
     subject = models.CharField(max_length=100)
     message = models.TextField()
