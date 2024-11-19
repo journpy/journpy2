@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.mail import EmailMessage
 from .forms import ContactForm
-from django.conf import settings
 
 
 def contact(request):
