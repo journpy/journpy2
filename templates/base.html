@@ -45,8 +45,8 @@
                     {% else %}
 
                     <a class="flex-sm-fill text-sm-center nav-link a-color" href="{% url 'login' %}">Log In</a>
-                    <a class="flex-sm-fill text-sm-center nav-link active a-color" href="{% url 'signup' %}">Register a
-                        course &raquo;</a>
+                    <a class="flex-sm-fill text-sm-center nav-link active a-color" href="{% url 'signup' %}">Sign up
+                        &raquo;</a>
                     {% endif %}
                     {% if user.is_authenticated %}
                     <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'password_change' %}">| Change

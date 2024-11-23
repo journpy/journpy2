@@ -10,5 +10,9 @@
     {% bootstrap_form form %}
     {% bootstrap_button button_type="submit" content="Login" %}
 </form>
-<p><a href="{% url 'password_reset' %}">Forgotten password?</a></p>
+<br>
+<p class='fw-bold'><a href="{% url 'password_reset' %}">Forgotten password?</a></p>
+<p class="lead">---------------- or ----------------</p>
+<p class='fw-bold'><a href="{% url 'signup' %}">Create new account</a></p>
+
 {% endblock content %}
