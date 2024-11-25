@@ -15,18 +15,20 @@ COURSE_CHOICES = {
 
 
 class CustomUser(AbstractUser):
-    date_of_birth = models.DateField(null=False, blank=False,)
+    date_of_birth = models.DateField()
     email = models.EmailField(unique=True)
-    phone_number = PhoneNumberField(blank=True)
+    phone_number = PhoneNumberField(
+        help_text="Enter phone number with country code e.g. +23400000000"
+        )
     country = CountryField(blank_label="Select Country")
     course = models.CharField(
-        max_length=4, 
-        choices=COURSE_CHOICES, 
+        max_length=4,
+        choices=COURSE_CHOICES,
         default="SEL"
         )
     reference_code = models.UUIDField(
-        default=uuid.uuid4, 
-        unique=True, 
+        default=uuid.uuid4,
+        unique=True,
         editable=False,
     )
     # Make email the default for logging in
