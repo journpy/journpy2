@@ -6,14 +6,14 @@
     <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image.imgname }}">
     <div class="card-body">
         <p class="card-text">{{ post.body_rendered | safe }}</p>
-        <p class="card-text"><small class="text-body-secondary">{{ post.date_modified }}</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{ post.date_modified }} by {{ post.author.username }}</small></p>
     </div>
 </div>
 <div class="card">
     <img src="{{ post.image2.url }}" class="card-img-top" alt="{{ post.image2.imgname }}">
     <div class="card-body">
         <p class="card-text">{{ post.body2_rendered | safe }}</p>
-        <p class="card-text"><small class="text-body-secondary">{{ post.date_modified }}</small></p>
+        <p class="card-text"><small class="text-body-secondary">{{ post.date_modified }} by {{ post.author.username }}</small></p>
     </div>
 </div>
 
@@ -22,8 +22,8 @@
 <script>
 
     var disqus_config = function () {
-    this.page.url = "https://journpy.pythonanywhere.com/post/5/how-i-learnt-sql-in-1-day/";  // Page's canonical URL variable
-    this.page.identifier = "/5/how-i-learnt-sql-in-1-day/"; // Page's unique identifier variable
+    this.page.url = "https://journpy.pythonanywhere.com/post/{{ post.pk }}/{{ post.slug }}/";  // Page's canonical URL variable
+    this.page.identifier = "/{{ post.pk }}/{{ post.slug }}/"; // Page's unique identifier variable
     };
     (function() { // DON'T EDIT BELOW THIS LINE
     var d = document, s = d.createElement('script');

@@ -7,16 +7,20 @@ from markdownfield.validators import VALIDATOR_STANDARD
 class Post(models.Model):
     """Model a blog post."""
     title = models.CharField(max_length=200)
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        limit_choices_to={'is_superuser': True},
+        )
     date_modified = models.DateTimeField(auto_now=True)
     date_created = models.DateTimeField(auto_now_add=True)
-    # Implementing django-markdownfield 
+    # Implementing django-markdownfield
     body = MarkdownField(
-        rendered_field='body_rendered', 
+        rendered_field='body_rendered',
         validator=VALIDATOR_STANDARD
         )
     body2 = MarkdownField(
-        rendered_field='body2_rendered', 
+        rendered_field='body2_rendered',
         validator=VALIDATOR_STANDARD
         )
     body_rendered = RenderedMarkdownField()
@@ -28,7 +32,7 @@ class Post(models.Model):
     image2 = models.ImageField(upload_to='images/', blank=True)
     slug = models.SlugField(max_length=255)
 
-    
+
     class Meta:
         ordering = ('-date_created',)
 
