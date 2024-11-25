@@ -18,13 +18,14 @@ class CustomUser(AbstractUser):
     date_of_birth = models.DateField()
     email = models.EmailField(unique=True)
     phone_number = PhoneNumberField(
-        help_text="Enter phone number with country code e.g. +23400000000"
+        blank=True,
+        help_text="Enter phone number with country code e.g. +234XXXXXXXXXX",
         )
     country = CountryField(blank_label="Select Country")
     course = models.CharField(
         max_length=4,
         choices=COURSE_CHOICES,
-        default="SEL"
+        default="SEL",
         )
     reference_code = models.UUIDField(
         default=uuid.uuid4,
