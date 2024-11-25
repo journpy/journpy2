@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> e0c4bfa892d7ea5ddd56c75e2610e5b7eaf8bed8
 {% load static %}
 
 <!doctype html>
@@ -46,10 +42,8 @@
 
                         <button type="submit" class="btn back-color text-white">Logout</button>
                     </form>
-<<<<<<< HEAD
                     <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'password_change' %}">| Change
                         Password |</a>
-=======
                     {% else %}
 
                     <a class="flex-sm-fill text-sm-center nav-link a-color" href="{% url 'login' %}">Log In</a>
@@ -86,7 +80,6 @@
         crossorigin="anonymous"></script>
 </body>
 
-=======
 {% load static %}
 
 <!doctype html>
@@ -131,20 +124,17 @@
 
                         <button type="submit" class="btn back-color text-white">Logout</button>
                     </form>
->>>>>>> e0c4bfa892d7ea5ddd56c75e2610e5b7eaf8bed8
                     {% else %}
 
                     <a class="flex-sm-fill text-sm-center nav-link a-color" href="{% url 'login' %}">Log In</a>
                     <a class="flex-sm-fill text-sm-center nav-link active a-color" href="{% url 'signup' %}">Sign up
                         &raquo;</a>
                     {% endif %}
-<<<<<<< HEAD
-=======
+
                     {% if user.is_authenticated %}
                     <a class="flex-sm-fill text-sm-center nav-link" href="{% url 'password_change' %}">| Change
                         Password |</a>
                     {% endif %}
->>>>>>> e0c4bfa892d7ea5ddd56c75e2610e5b7eaf8bed8
 
                     {% if user.is_authenticated and user.is_staff %}
                     <a class="flex-sm-fill text-sm-center nav-link" href="/admin/">| Admin |</a>
@@ -169,13 +159,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
         integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
         crossorigin="anonymous"></script>
-<<<<<<< HEAD
     <script id="dsq-count-scr" src="//journpy.disqus.com/count.js" async></script>
 </body>
 
-=======
-</body>
-
->>>>>>> 835525231e7d309a8754cf9417924e9982d06947
->>>>>>> e0c4bfa892d7ea5ddd56c75e2610e5b7eaf8bed8
 </html>
