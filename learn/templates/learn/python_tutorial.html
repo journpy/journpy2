@@ -26,18 +26,18 @@
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page=1">1</a></button>
-            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.previous_page_number }}">Prev</a></button>
+            <a class="btn btn-primary" href="?page=1" role="button">1</a>
+            <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}" role="button">Prev</a>
         {% endif %}
 
-    <span class="current">
+    <span class="current text-danger">
     &nbsp;&nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;&nbsp;
     </span>
 
 
         {% if page_obj.has_next %}
-            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.next_page_number }}">Next</a></button>
-            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></button>
+            <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}" role="button">Next</a>
+            <a class="btn btn-primary" href="?page={{ page_obj.paginator.num_pages }}" role="button">{{ page_obj.paginator.num_pages }}</a>
         {% endif %}
     </span>
 </div>
