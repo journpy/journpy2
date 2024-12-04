@@ -44,3 +44,7 @@
 .justify-custom {
     text-align: justify !important;
 }
+
+.navbar-toggler {
+    border: 0;
+}

@@ -22,8 +22,8 @@ def contact(request):
             return redirect('success')
     else:
         form = ContactForm()
-    return render(request, 'contact.html', {'form': form})
+    return render(request, 'contact/contact.html', {'form': form})
 
 
 def success(request):
-    return render(request, 'success.html')
+    return render(request, 'contact/success.html')

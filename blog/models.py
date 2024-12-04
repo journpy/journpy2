@@ -6,7 +6,7 @@ from markdownfield.validators import VALIDATOR_STANDARD
 
 class Post(models.Model):
     """Model a blog post."""
-    title = models.CharField(max_length=200)
+    title = models.CharField(max_length=100)
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE,
@@ -17,20 +17,12 @@ class Post(models.Model):
     # Implementing django-markdownfield
     body = MarkdownField(
         rendered_field='body_rendered',
-        validator=VALIDATOR_STANDARD
-        )
-    body2 = MarkdownField(
-        rendered_field='body2_rendered',
-        validator=VALIDATOR_STANDARD
+        validator=VALIDATOR_STANDARD,
         )
     body_rendered = RenderedMarkdownField()
-    body2_rendered = RenderedMarkdownField()
-
-    imgname = models.CharField(max_length=250, blank=True)
-    imgname2 = models.CharField(max_length=250, blank=True)
+    image_name = models.CharField(max_length=50, blank=True)
     image = models.ImageField(upload_to='images/', blank=True)
-    image2 = models.ImageField(upload_to='images/', blank=True)
-    slug = models.SlugField(max_length=255)
+    slug = models.SlugField(max_length=100)
 
 
     class Meta:

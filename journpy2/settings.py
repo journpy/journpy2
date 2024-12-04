@@ -24,6 +24,7 @@ ALLOWED_HOSTS = ["journpy.pythonanywhere.com"]
 
 # Application definition
 INSTALLED_APPS = [
+    # Default apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,7 +39,8 @@ INSTALLED_APPS = [
     "django_countries",
     "markdownfield",        # render Markdown and store it in the database.
 
-    # My apps
+    # Local apps
+    "learn.apps.LearnConfig",
     "blog.apps.BlogConfig",
     "mainapp.apps.MainappConfig",
     "users.apps.UsersConfig",
@@ -155,6 +157,8 @@ EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
+SERVER_EMAIL = config('SERVER_EMAIL')
+ADMINS = [('Uchenna Wealth', 'uceeworld@gmail.com'), ('JournPy', 'journpy@gmail.com')]
 
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True

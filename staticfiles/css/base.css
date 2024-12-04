@@ -39,9 +39,12 @@
     bottom: 0;
     width: 100%;
     height: auto;
-    background-color: white;
 }
 
 .justify-custom {
     text-align: justify !important;
+}
+
+.navbar-toggler {
+    border: 0;
 }
