@@ -1,0 +1,23 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}About Us{% endblock title %}
+
+{% block content %}
+<h1 class="text-primary">About Us</h1>
+<p class="lead p-color">Our mission is to help fast track your tech journey
+    with Python.</p>
+<div class="container justify-custom">
+    <p>JournPy is a registered start up that aims to revolutionise the way persons
+        learn coding. Through an integrated learning approach, we create links
+        between various disciplines and coding thus empowering learners with
+        dynamic skills that are much needed in today's world.</p>
+    <p>At JournPy we believe that learners should be able to actively
+        interact with their tutors but we equally believe that the future of
+        learning is 100% online. This is why we offer live virtual classes in
+        real time instead of pre-recorded lessons.</p>
+    <p>To share your story or for further enquiries, you can
+        <a href="{% url 'contact' %}">write us</a>. You may also visit our FAQ and
+        <a href="{% url 'blogs' %}">blog</a> for more.
+    </p>
+</div>
+{% endblock content %}

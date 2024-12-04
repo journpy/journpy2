@@ -1,0 +1,31 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+<h2 class="text-primary">{{ post.title }}</h2>
+<div class="card mb-3">
+    <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image.image_name }}">
+    <div class="card-body">
+        <p class="card-text">{{ post.body_rendered | safe }}</p>
+        <p class="card-text"><small class="text-body-secondary">{{ post.date_modified }} by {{ post.author.username }}</small></p>
+    </div>
+</div>
+<p><a href="{% url 'blogs' %}">&laquo blog posts</a></p>
+<!-- integrate disqus here -->
+<div id="disqus_thread"></div>
+<script>
+
+    var disqus_config = function () {
+    this.page.url = "https://journpy.pythonanywhere.com/post/{{ post.pk }}/{{ post.slug }}/";  // Page's canonical URL variable
+    this.page.identifier = "/{{ post.pk }}/{{ post.slug }}/"; // Page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://journpy.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+{% endblock content %}
