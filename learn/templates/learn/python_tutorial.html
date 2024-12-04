@@ -1,0 +1,45 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Learn Python{% endblock title %}
+
+{% load django_bootstrap5 %}
+
+{% block content %}
+{% for tutorial in tutorial_list %}
+<h2 class=text-primary>{{ tutorial.title }}</h2>
+ <div class="col">
+    <div class="card h-100">
+      <div class="card-header">Author: <cite title="Author">{{ tutorial.author }}</cite></div>
+      <div class="card-body justify-custom mb-0">
+        <p class="card-text">{{ tutorial.main_text_rendered | safe }}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-body-secondary">Last updated {{ tutorial.last_updated }}</small>
+      </div>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+<div class="container mt-3" style="text-align: center !important;">
+<!-- Implement pagination -->
+<div class="pagination">
+    <span class="step-links">
+        {% if page_obj.has_previous %}
+            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page=1">1</a></button>
+            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.previous_page_number }}">Prev</a></button>
+        {% endif %}
+
+    <span class="current">
+    &nbsp;&nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;&nbsp;
+    </span>
+
+
+        {% if page_obj.has_next %}
+            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.next_page_number }}">Next</a></button>
+            <button type="button" class="btn btn-info"><a style="text-decoration: none;" href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a></button>
+        {% endif %}
+    </span>
+</div>
+</div>
+{% endblock content %}
