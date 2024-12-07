@@ -4,7 +4,7 @@ Settings for journpy2 project.
 
 from pathlib import Path
 import os
-from decouple import config
+from decouple import config, Csv
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +20,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
 
-ALLOWED_HOSTS = ["journpy.pythonanywhere.com"]
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 # Application definition
 INSTALLED_APPS = [
@@ -158,7 +158,7 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 SERVER_EMAIL = config('SERVER_EMAIL')
-ADMINS = [('Uchenna Wealth', 'uceeworld@gmail.com'), ('JournPy', 'journpy@gmail.com')]
+ADMINS = [('JournPy', 'journpy@gmail.com')]
 
 if os.environ.get('DEBUG') == 'TRUE':
     DEBUG = True
@@ -166,6 +166,6 @@ elif os.environ.get('DEBUG') == 'FALSE':
     DEBUG = False
 
 # for django-markdownfield
-SITE_URL = "https://journpy.pythonanywhere.com/"
+SITE_URL = config("SITE_URL")
 
 
