@@ -20,26 +20,28 @@
   </div>
 </div>
 {% endfor %}
-
-<div class="container mt-3" style="text-align: center !important;">
+<div class="container mt-2">
 <!-- Implement pagination -->
 <div class="pagination">
     <span class="step-links">
         {% if page_obj.has_previous %}
-            <a class="btn btn-primary" href="?page=1" role="button">1</a>
-            <a class="btn btn-primary" href="?page={{ page_obj.previous_page_number }}" role="button">Prev</a>
+        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary" role="button">&laquo;</a>
         {% endif %}
-
-    <span class="current text-danger">
-    &nbsp;&nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}. &nbsp;&nbsp;
-    </span>
-
-
+        {% if page_obj.number <= page_obj.paginator.num_pages %}
+        {% for a_page in page_obj.paginator %}
+        <a href="?page={{ a_page.number }}" class="btn btn-outline-primary" role="button">{{ a_page.number }}</a>
+        {% endfor %}
+        {% endif %}
         {% if page_obj.has_next %}
-            <a class="btn btn-primary" href="?page={{ page_obj.next_page_number }}" role="button">Next</a>
-            <a class="btn btn-primary" href="?page={{ page_obj.paginator.num_pages }}" role="button">{{ page_obj.paginator.num_pages }}</a>
+        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary" role="button">&raquo;</a>
         {% endif %}
     </span>
 </div>
+<div class="p-4">
+    <span class="current text-center">
+        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+    </span>
+    </div>
 </div>
+
 {% endblock content %}
