@@ -12,6 +12,7 @@ urlpatterns = [
     path("", include("contact.urls")),
     path("", include("mainapp.urls")),
     path("", include("learn.urls")),
+    path('', include('pwa.urls')),  # You MUST use an empty string as the URL prefix
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

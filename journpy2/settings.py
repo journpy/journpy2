@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "phonenumber_field",
     "django_countries",
     "markdownfield",        # render Markdown and store it in the database.
+    "pwa",
 
     # Local apps
     "learn.apps.LearnConfig",
@@ -168,4 +169,77 @@ elif os.environ.get('DEBUG') == 'FALSE':
 # for django-markdownfield
 SITE_URL = config("SITE_URL")
 
+# configuring pwa manifest members
+PWA_APP_NAME = 'JournPy'
+PWA_APP_DESCRIPTION = "An app that offers concise tutorials on programming languages and frameworks."
+PWA_APP_THEME_COLOR = '#4062AD'
+PWA_APP_BACKGROUND_COLOR = '#ffffff'
+PWA_APP_DISPLAY = 'standalone'
+PWA_APP_SCOPE = '/'
+PWA_APP_ORIENTATION = 'any'
+PWA_APP_START_URL = '/'
+PWA_APP_STATUS_BAR_COLOR = 'default'
+PWA_APP_ICONS = [
+    {
+        'src': '/static/images/jpy_pwa_icon.png',
+        'sizes': '2481x2481'
+    }
+]
+PWA_APP_ICONS_APPLE = [
+    {
+        'src': '/static/images/jpy_pwa_icon.png',
+        'sizes': '2481x2481'
+    }
+]
+PWA_APP_SPLASH_SCREEN = [
+    {
+        'src': '/static/images/icons/journpy12@300x.png',
+        'media': '(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)'
+    }
+]
+PWA_APP_DIR = 'ltr'
+PWA_APP_LANG = 'en-US'
+PWA_APP_SHORTCUTS = [
+    {
+        'name': 'Login',
+        'url': 'https://journpy.pythonanywhere.com/users/login/',
+        'description': 'Shortcut to Login page',
+        "icons": [
+            {
+                'src': '/static/images/login_shortcut.png',
+                'sizes': '96x96'
+            }
+                ]
+    },
+    {
+        'name': 'Blog',
+        'url': 'https://journpy.pythonanywhere.com/blogs/',
+        'description': 'Shortcut to Blogs',
+        'icons': [
+            {
+                'src': '/static/images/blog_shortcut.png',
+                'sizes': '96x96'
+            }
+                ]
+    },
+
+    {
+        'name': 'Learn Python',
+        'url': 'https://journpy.pythonanywhere.com/python_tutorial/',
+        'description': 'Learn Python Shortcut',
+        'icons': [
+            {
+                'src': '/static/images/jpylearn_py.png',
+                'sizes': '96x96'
+            }
+                ]
+        },
+]
+PWA_APP_SCREENSHOTS = [
+    {
+      'src': '/static/images/jpy_pwa_icon.png',
+      'sizes': '2481x2481',
+      "type": "image/png"
+    }
+]
 
