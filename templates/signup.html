@@ -5,9 +5,12 @@
 {% block title %}Sign Up{% endblock title %}
 {% block content %}
 <h2 class="text-primary">Register for a course</h2>
+<div class="container" style="max-width: 500px; height: 100%;">
 <form method="post">
     {% csrf_token %}
     {% bootstrap_form form %}
     {% bootstrap_button button_type="submit" content="Sign Up" %}
 </form>
+</div>
+
 {% endblock content %}

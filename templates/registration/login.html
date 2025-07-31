@@ -4,20 +4,17 @@
 
 {% block title %}Log In{% endblock title %}
 {% block content %}
-<p class="text-primary">Log In</p>
-<div class="p-3 border border-primary">
-<div class="input-group input-group-lg d-flex justify-content-center flex-nowrap">
+<div class="container" style=" max-width: 500px; height: 100%;">
+<p class="lead text-primary">Log into your account</p>
+
 <form method="post">
     {% csrf_token %}
-    <div>{% bootstrap_form form %}</div>
+    {% bootstrap_form form %}
     {% bootstrap_button button_type="submit" content="Login" %}
 </form>
-</div>
-<br>
-<div class="container">
 <p class='fw-bold'><a href="{% url 'password_reset' %}">Forgotten password?</a></p>
 <p>------------- or -------------</p>
 <p class='fw-bold'><a href="{% url 'signup' %}">Create new account</a></p>
 </div>
-</div>
+
 {% endblock content %}
