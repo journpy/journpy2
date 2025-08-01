@@ -12,12 +12,3 @@ class AboutPageView(TemplateView):
     """View for About Page."""
     template_name = "mainapp/about.html"
 
-
-class WebDevView(LoginRequiredMixin, AccessMixin, TemplateView):
-    template_name = "mainapp/webdev.html"
-    login_url = reverse_lazy('login')
-
-
-class BootCampView(TemplateView):
-    template_name = 'mainapp/bootcamps.html'
-

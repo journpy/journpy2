@@ -15,7 +15,7 @@
 }
 
 .a-color {
-    color: white !important;
+    color: #4062AD !important;
     text-decoration: none;
 }
 
@@ -48,3 +48,10 @@
 .navbar-toggler {
     border: 0;
 }
+.tutorial-card {
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+    }
+.invisible-border {
+    border: 1px solid transparent;
+  }

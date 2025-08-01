@@ -7,22 +7,11 @@ import os
 from decouple import config, Csv
 
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', cast=bool)
-
 ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
-# Application definition
 INSTALLED_APPS = [
     # Default apps
     "django.contrib.admin",
@@ -42,7 +31,7 @@ INSTALLED_APPS = [
 
     # Local apps
     "learn.apps.LearnConfig",
-    "blog.apps.BlogConfig",
+    #"blog.apps.BlogConfig",
     "mainapp.apps.MainappConfig",
     "users.apps.UsersConfig",
     "contact.apps.ContactConfig",

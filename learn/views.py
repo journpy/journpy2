@@ -1,5 +1,6 @@
 from django.views.generic import ListView
-from .models import LearnPython, LearnDjango
+from learn.models.python_models import LearnPython
+from learn.models.django_models import LearnDjango
 
 
 class LearnPythonDetailView(ListView):

@@ -6,15 +6,15 @@
 
 {% block content %}
 {% for tutorial in tutorial_list %}
-<h2 class=text-primary>{{ tutorial.title }}</h2>
+<h1 class=text-success>{{ tutorial.title }}</h1>
  <div class="col">
     <div class="card h-100">
-      <div class="card-header">Author: <cite title="Author">{{ tutorial.author }}</cite></div>
+      <div class="card-header">Author: <cite title="Author">{{ tutorial.author.first_name }}</cite></div>
       <div class="card-body justify-custom mb-0">
         <p class="card-text">{{ tutorial.main_text_rendered | safe }}</p>
       </div>
       <div class="card-footer">
-        <small class="text-body-secondary">Last updated {{ tutorial.last_updated }}</small>
+        <small class="text-body-secondary">Last updated {{ tutorial.date_updated }}</small>
       </div>
     </div>
   </div>
@@ -24,17 +24,21 @@
 <!-- Implement pagination -->
 <div class="pagination">
     <span class="step-links">
-        {% if page_obj.has_previous %}
-        <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-outline-primary" role="button">&laquo;</a>
+        {% if page_obj.has_next %}
+        <p style="width: 100px;"><a href="?page={{ page_obj.next_page_number }}" class="btn btn-success" role="button">Next Lesson &raquo;</a></p>
         {% endif %}
+
+        {% if page_obj.has_previous %}
+        <p style="width: 100px;"><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary" role="button">&laquo; Previous Lesson</a></p>
+        {% endif %}
+        <!--
         {% if page_obj.number <= page_obj.paginator.num_pages %}
         {% for a_page in page_obj.paginator %}
         <a href="?page={{ a_page.number }}" class="btn btn-outline-primary" role="button">{{ a_page.number }}</a>
         {% endfor %}
         {% endif %}
-        {% if page_obj.has_next %}
-        <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary" role="button">&raquo;</a>
-        {% endif %}
+        -->
+        
     </span>
 </div>
 <div class="p-4">

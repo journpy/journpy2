@@ -15,6 +15,13 @@ COURSE_CHOICES = {
 
 
 class CustomUser(AbstractUser):
+    """ Custom user model. """
+    id = models.UUIDField(
+        default=uuid.uuid4, 
+        primary_key=True, 
+        unique=True, 
+        editable=False,
+        )
     date_of_birth = models.DateField()
     email = models.EmailField(unique=True)
     phone_number = PhoneNumberField(

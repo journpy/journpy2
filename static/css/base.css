@@ -15,7 +15,7 @@
 }
 
 .a-color {
-    color: white !important;
+    color: #4062AD !important;
     text-decoration: none;
 }
 
@@ -48,3 +48,39 @@
 .navbar-toggler {
     border: 0;
 }
+
+.tutorial-card {
+    border: 1px solid #dee2e6;
+    border-radius: 12px;
+    overflow: hidden;
+    height: 100%;            /* Fixed height */
+    overflow: hidden;         /* Prevent content overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.step-icon {
+    font-size: 48px;
+    display: inline-block;
+    animation: bounce 1.2s infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+  }
+
+.category-icon, .step-icon {
+      font-size: 2rem;
+      color: #0d6efd;
+    }
+.category-box {
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+    }
+.step {
+      text-align: center;
+    }

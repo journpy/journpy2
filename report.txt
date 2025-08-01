@@ -1,3 +1,0 @@
-JournPy app is up and alive ✅
-
-JournPy app is currently down ⚠️
