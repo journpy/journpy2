@@ -84,3 +84,46 @@
 .step {
       text-align: center;
     }
+
+.login-card {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background-color: white;
+    }
+    .form-control {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+.signup-card {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background-color: white;
+    }
+    .signup-card h2 {
+      margin-bottom: 1.5rem;
+    }
+    .signup-card .form-control {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }
+.password-reset-card {
+      max-width: 400px;
+      margin: 80px auto;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background-color: white;
+    }
+    .password-reset-card h2 {
+      margin-bottom: 1.5rem;
+    }
+    .password-reset-card .form-control {
+      font-size: 0.9rem;
+      padding: 0.5rem 0.75rem;
+    }

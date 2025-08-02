@@ -1,31 +1,25 @@
-<<<<<<< HEAD
 {% extends 'mainapp/base.html' %}
 
 {% load django_bootstrap5 %}
 
 {% block title %}Sign Up{% endblock title %}
 {% block content %}
-<h2 class="text-primary">Register for a course</h2>
-<form method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% bootstrap_button button_type="submit" content="Sign Up" %}
-</form>
-=======
-{% extends 'mainapp/base.html' %}
 
-{% load django_bootstrap5 %}
-
-{% block title %}Sign Up{% endblock title %}
-{% block content %}
-<h2 class="text-primary">Register for a course</h2>
-<div class="container" style="max-width: 500px; height: 100%;">
+<div class="signup-card">
+<h2 class="text-primary">Sign Up</h2>
 <form method="post">
-    {% csrf_token %}
-    {% bootstrap_form form %}
-    {% bootstrap_button button_type="submit" content="Sign Up" %}
+  {% csrf_token %}
+{% for field in form %}
+  <div class="mb-3">
+    <label class="form-label" style="width: 100%;">{{ field.label }}</label>
+    {{ field }}
+    {% if field.errors %}
+      <div class="text-danger small">{{ field.errors }}</div>
+    {% endif %}
+  </div>
+{% endfor %}
+<button type="submit" class="btn btn-sm btn-primary">Sign Up</button>
 </form>
 </div>
 
->>>>>>> 30f89ca911d9b5ae4432c63e4592f6ee61600330
 {% endblock content %}

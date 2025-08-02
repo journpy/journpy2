@@ -46,3 +46,5 @@ class CustomUserChangeForm(UserChangeForm):
             'country', 
             'course',
         )
+
+

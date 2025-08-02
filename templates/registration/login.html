@@ -4,21 +4,28 @@
 
 {% block title %}Log In{% endblock title %}
 {% block content %}
-<p class="text-primary">Log In</p>
-<div class="p-3 border border-primary">
-<div class="input-group input-group-lg d-flex justify-content-center flex-nowrap">
-<form method="post">
-    {% csrf_token %}
-    <div>{% bootstrap_form form %}</div>
-    {% bootstrap_button button_type="submit" content="Login" %}
-</form>
-</div>
-<br>
-<div class="container">
-<p class='fw-bold'><a href="{% url 'password_reset' %}">Forgotten password?</a></p>
-<p>------------- or -------------</p>
-<p class='fw-bold'><a href="{% url 'signup' %}">Create new account</a></p>
-</div>
-</div>
+
+<div class="login-card">
+    <h2 class="mb-4 text-primary">Login</h2>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          <label class="form-label" style="width: 100%">{{ field.label }}</label>
+          {{ field }}
+          {% if field.errors %}
+            <div class="text-danger small">
+              {{ field.errors|striptags }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-sm btn-primary">Login</button>
+    </form>
+    <div class="text-center mt-3">
+      <p><small>Don't have an account? <a href="{% url 'signup' %}">Sign up</a></small></p>
+      <p><small>Forgotten password? <a href="{% url 'password_reset' %}">Reset your password</a></small></p>
+    </div>
+  </div>
 
 {% endblock content %}
