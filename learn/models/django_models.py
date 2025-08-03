@@ -7,7 +7,7 @@ class LearnDjango(BaseTutorial):
     class Meta:
         verbose_name = 'Django Tutorial'
         verbose_name_plural = 'Django Tutorial'
-        ordering = ('date_created',)
+        ordering = ('-date_created',)
 
 
     def __str__(self):

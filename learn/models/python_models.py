@@ -7,7 +7,7 @@ class LearnPython(BaseTutorial):
     class Meta:
         verbose_name = 'Python Tutorial'
         verbose_name_plural = 'Python Tutorial'
-        ordering = ('date_created',)
+        ordering = ('-date_created',)
 
 
     def __str__(self):
