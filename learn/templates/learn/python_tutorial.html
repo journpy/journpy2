@@ -30,6 +30,8 @@
         <p style="width: 100px;"><a href="?page={{ page_obj.next_page_number }}" class="btn btn-success" role="button">Next Lesson &raquo;</a></p>
         {% endif %}
 
+        <p style='width: 100px;'><a href="{% url 'python_contents' %}" class='btn btn-warning'>Table of Contents</a></p>
+
         {% if page_obj.has_previous %}
         <p style="width: 100px;"><a href="?page={{ page_obj.previous_page_number }}" class="btn btn-primary" role="button">&laquo; Previous Lesson</a></p>
         {% endif %}

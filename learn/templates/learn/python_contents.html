@@ -1,0 +1,19 @@
+{% extends 'mainapp/base.html' %}
+
+{% block title %}Table of contents{% endblock title %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow-sm rounded-4">
+          <div class="card-body">
+            <h3 class="card-title text-primary mb-4 border-bottom pb-2">Table of Contents</h3>
+            {% for tutorial in tutorial_list %}
+            <div class="list-group list-group-flush">
+              <a href="{% url 'python_tutorial' %}?page={{ tutorial.id }}" class="list-group-item list-group-item-action text-primary fs-3">{{ tutorial.title }}</a>
+
+{% empty %}
+<p class='lead'>Loading Table of contents</p>
+{% endfor %}
+{% endblock content %}
