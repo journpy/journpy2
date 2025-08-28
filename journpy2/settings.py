@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     "django_countries",
     "markdownfield",        # render Markdown and store it in the database.
     "pwa",
+    "captcha",
 
     # Local apps
     "learn.apps.LearnConfig",
@@ -231,4 +232,11 @@ PWA_APP_SCREENSHOTS = [
       "type": "image/png"
     }
 ]
+
+# captcha configuration
+CAPTCHA_FONT_SIZE = 50
+CAPTCHA_CHALLENGE_FUNCT = 'captcha.helpers.math_challenge'
+
+
+
 

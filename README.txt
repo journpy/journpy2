@@ -1,6 +1,6 @@
 JournPy offers simplified tutorials on Python Programming. Whether you are a 
-newbie seeking to learn a programming language or you are an experienced
-develope wanting to learn Python, JournPy offers concise tutorials to speed up
+newbie seeking to learn a programming language or an experienced
+developer wanting to learn Python, JournPy offers concise tutorials to speed up
 your Python learning.
 
 JournPy is developed and maintained by Uchenna Adubasim - a Software Engineer 

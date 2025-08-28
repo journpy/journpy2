@@ -9,15 +9,17 @@ def contact(request):
         if form.is_valid():
             name = form.cleaned_data['name']
             email = form.cleaned_data['email']
+            #phone = form.cleaned_data['phone']
             message = form.cleaned_data['message']
 
-            EmailMessage('Contact Form Submission from {}'.format(name),
-            message,
-            'form-response@example.com', # Send from (your website)
-            ['journpy@gmail.com'], # Send to (your admin email)
-            [],
-            reply_to=[email] # Email from the form to get back to
-            ).send()
+            EmailMessage(
+                subject='Contact Form Submission from {}'.format(name),
+                body=f'{message}',
+                from_email='form-response@example.com', # Send from (your website)
+                to=['journpy@gmail.com'], # Send to (your admin email)
+                bcc=[],
+                reply_to=[email] # Email from the form to get back to
+                ).send()
 
             return redirect('success')
     else:
